@@ -13,8 +13,8 @@
 # You should have received a copy of the MIT License along with this program.
 # If not, see <https://opensource.org/license/mit>.
 
-"""The implementation of the "simple" interface in relation to basis objects
-(see the package docs)."""
+"""Utilities for creating \"mapping fixtures\" with the "simple" interface
+in relation to basis objects"""
 
 from collections.abc import Iterator
 
