@@ -77,7 +77,14 @@ contexts_mapping = pytest.fixture(
 )
 ```
 
-There is no way to avoid boilerplate code to use some function as a standalone fixture and in a mapping fixture at the same time. The example below shows minimal code for the case of a fixture that does not depend on any other fixture.
+Mapping fixtures can be created as **methods of classes**, but you **need to wrap** the created object (whether a fixture or a fixture function) with `staticmethod`.
+
+```python
+class TestClass:
+    contexts_mapping = staticmethod(make_mapping_fixture('contexts_mapping', MAPPING))
+```
+
+There is no way to avoid some boilerplate to use some function as a standalone fixture and in a mapping fixture at the same time. The example below shows minimal code for the case of a fixtre that does not depend on any other fixture.
 
 ```python
 # factory function
