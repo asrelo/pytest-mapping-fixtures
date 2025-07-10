@@ -77,13 +77,15 @@ contexts_mapping = pytest.fixture(
 )
 ```
 
-You might be able to avoid having to separate some widely used fixture functions into factories and boilerplate fixture functions by using `pytest.fixture`'s argument `name`. However, that only works **if the fixture does not depend on any other fixture**.
+There is no way to avoid boilerplate code to use some function as a standalone fixture and in a mapping fixture at the same time. The example below shows minimal code for the case of a fixture that does not depend on any other fixture.
 
 ```python
-# creates a fixture named "context"
-@pytest.fixture(name='context')
-def fixture_context():
+# factory function
+def build_context():
     return Context(...)
+
+# creates a fixture named "context"
+context = pytest.fixture(name='context')(fixture_context)
 
 # uses the fixture normally
 def test_1(context):
