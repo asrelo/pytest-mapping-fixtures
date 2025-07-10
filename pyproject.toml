@@ -23,8 +23,7 @@ dynamic = ["version"]
 [project.optional-dependencies]
 dev = ["pylint >=3.3.7,<4"]
 
-[tool.setuptools]
-packages = ["pytest_mapping_fixtures"]
+#[tool.setuptools.packages]
 
 [tool.setuptools.package-data]
 pytest_mapping_fixtures = ["VERSION"]
