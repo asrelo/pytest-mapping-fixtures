@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools >=68,<81"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "asrelo-pytest-mapping-fixtures"
+readme = "README.md"
+license = "MIT"
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+]
+requires-python = ">=3.10"
+dynamic = ["version"]
+
+[project.optional-dependencies]
+dev = ["pylint >=3.3.7,<4"]
+
+[tool.setuptools]
+packages = ["pytest_mapping_fixtures"]
+
+[tool.setuptools.package-data]
+pytest_mapping_fixtures = ["VERSION"]
+
+[tool.setuptools.dynamic]
+version = { file = ["pytest_mapping_fixtures/VERSION"] }
