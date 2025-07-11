@@ -18,9 +18,9 @@ There are 2 ways to give the mapping of basis objects.
          return [-1, 0, 1]
 
      def factory_2():
-         user = create_user()
-         yield user
-         delete_user(user)
+         obj = create_env_object()
+         yield obj
+         delete_env_object(obj)
 
      MAPPING = {
          'a': (1, 2, 3),
