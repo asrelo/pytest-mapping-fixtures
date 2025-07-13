@@ -1,3 +1,7 @@
+**DEPRECATED**: use [asrelo/pytest-universal-indirection](https://github.com/asrelo/pytest-universal-indirection) instead, that is a much simpler plugin.
+
+----
+
 # asrelo-pytest-mapping-fixtures
 
 Utilities for creating "mapping fixtures" for **pytest**. That is how we call a fixture that produces a function that receives a key and returns the corresponding value. This was developed as a (somewhat) convenient solution to pytest's inability to process fixtures passed to a test through `pytest.parametrize`.
